@@ -9,8 +9,19 @@
             weather: "sunny"
         };
         
+        var myNestedData = {
+            name: "Adam",
+            address: {
+                number : 234, 
+                street: "Main St."
+                }
+        }
+        
         console.log("Hello " + myData.name + ". ");
         console.log("Today is " + myData.weather + ".");
+        
+        console.log(myNestedData.name + "\' address is " + myNestedData.address.number + 
+                " " + myNestedData.address.street);
     </script>        
 </head>
 <body>

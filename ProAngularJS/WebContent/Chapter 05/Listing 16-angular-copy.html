@@ -17,9 +17,12 @@
             city: "London"
         };
 
-        angular.extend(myExtendedObject, myData);
+        // This is not a good example.
+        // Copy is a deep copy while extend is shallow copy
+        angular.copy(myData, myExtendedObject);
 
         console.log(myExtendedObject.name);
+        // city will be null since myData was copied to myExtendedObject and it was overwritten.
         console.log(myExtendedObject.city);
         
         myData.name = "Karl";
