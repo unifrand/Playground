@@ -8,7 +8,8 @@
             .success(function (data) {
                 $scope.data.products = data;
             })
-            .error(function (error) {
-                $scope.data.error = error;
+            .error(function (data, status) {
+                $scope.data.error = data;
+                $scope.data.status = status;
             });
     });
