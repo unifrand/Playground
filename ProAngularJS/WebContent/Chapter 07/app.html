@@ -3,25 +3,26 @@
 <head>
     <title>SportsStore</title>
     <script src="angular.js"></script>
+    <!--  <script src="stop-angular-overrides.js"></script>   -->
     <link href="bootstrap.css" rel="stylesheet" />
     <link href="bootstrap-theme.css" rel="stylesheet" />
     <script>
         angular.module("sportsStore", ["customFilters", "cart", "ngRoute"])
         .config(function ($routeProvider) {
 
-            $routeProvider.when("complete", {
+            $routeProvider.when("/complete", {
                 templateUrl: "views/thankYou.html"
             });
 
-            $routeProvider.when("placeorder", {
+            $routeProvider.when("/placeorder", {
                 templateUrl: "views/placeOrder.html"
             });
 
-            $routeProvider.when("checkout", {
+            $routeProvider.when("/checkout", {
                 templateUrl: "views/checkoutSummary.html"
             });
 
-            $routeProvider.when("products", {
+            $routeProvider.when("/products", {
                 templateUrl: "views/productList.html"
             });
 
@@ -43,9 +44,19 @@
         <cart-summary />
     </div>
     <div class="alert alert-danger" ng-show="data.error">
-        Error ({{data.error}} : {{data.status}}). The product data was not loaded.
+        Error ({{data.error.status}}). The product data was not loaded.
         <a href="/app.html" class="alert-link">Click here to try again</a>
     </div>
     <ng-view />
+    <!--  
+    <script src="find-missing-directives.js"></script>
+    <script>
+        var empty = findMissingDirectives();
+        if (empty.length) {
+            throw new Error('Found missing directives ' + empty.join(','));
+        }
+        // throws error 'Found missing directives my-tag'
+    </script>
+    -->
 </body>
 </html>
