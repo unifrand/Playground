@@ -27,7 +27,7 @@
 
     $scope.getScreen = function () {
         return $scope.current == "Products"
-            ? "/views/adminProducts.html" : "/views/adminOrders.html";
+            ? "views/adminProducts.html" : "views/adminOrders.html";
     };
 })
 .controller("ordersCtrl", function ($scope, $http, ordersUrl) {

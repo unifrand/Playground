@@ -25,7 +25,7 @@
                 })
                 .error(function (error) {
                     $scope.data.orderError = error;
-                }).finally(function () {
+                }).then(function () {
                     $location.path("/complete");
                 });
         }
